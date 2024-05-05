@@ -81,7 +81,7 @@ namespace Messages_Editor
                     for (int i = 0; i < entries.Count; i++)
                     {
                         bw.Write(offset);
-                        int strLength = Encoding.Unicode.GetByteCount(entries[i]);
+                        int strLength = Encoding.Unicode.GetByteCount(entries[i].Replace("\r\n", "\n"));
                         offset += strLength; // Increment offset by the length of the text entry
                     }
 
